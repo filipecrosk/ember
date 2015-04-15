@@ -1,3 +1,18 @@
-<h2 id="title">Welcome to Ember.js</h2>
+<div class="jumbotron">
+  <div class="container">
+    <h1>Alooga</h1>
+    <hr>
+    {{#link-to 'index'}}Home{{/link-to}}
+		{{#link-to 'protected'}}Protected{{/link-to}}
+		{{#if session.isAuthenticated}}
+		  <button {{ action 'invalidateSession' }}>Logout</button>
+		{{else}}
+		  {{#link-to 'login'}}Login{{/link-to}}
+		  {{#link-to 'signup'}}Sign-up{{/link-to}}
+		{{/if}}
+  </div>
+</div>
 
-{{outlet}}
+<div class="container">
+  {{outlet}}
+</div>

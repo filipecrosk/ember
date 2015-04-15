@@ -16,21 +16,31 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    contentSecurityPolicy: {
+      'default-src': "'self'",
+      'script-src': "'self'",
+      'img-src': "*"
     }
+  };
+
+  ENV['simple-auth'] = {    
+    authorizer: 'simple-auth-authorizer:devise'  
   };
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
+    ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
 
   if (environment === 'test') {
     // Testem prefers this...
     ENV.baseURL = '/';
-    ENV.locationType = 'none';
+    ENV.locationType = 'auto';
 
     // keep test console output quieter
     ENV.APP.LOG_ACTIVE_GENERATION = false;
@@ -40,7 +50,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV['simple-auth-devise']['serverTokenEndpoint'] = 'https://api.alooga.com.br/users/sign_in';
+    ENV['simple-auth-devise']['crossOriginWhitelist'] = ['https://api.alooga.com.br/'];
   }
 
   return ENV;
