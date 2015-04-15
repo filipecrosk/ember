@@ -19,14 +19,19 @@ module.exports = function(environment) {
     },
 
     contentSecurityPolicy: {
-      'default-src': "'self'",
-      'script-src': "'self'",
-      'img-src': "*"
+      'default-src': "'none'",
+      'script-src': "'self' connect.facebook.net",
+      'font-src': "'self' http://fonts.gstatic.com", // Allow fonts to be loaded from http://fonts.gstatic.com
+      'connect-src': "'self' http://localhost:3000", // Allow data (ajax/websocket) from api.mixpanel.com and custom-api.local
+      'img-src': "*",
+      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com 
+      'media-src': "'self'",
+      'frame-src': "'self' static.ak.facebook.com s-static.ak.facebook.com www.facebook.com"
     }
   };
 
   ENV['simple-auth'] = {    
-    authorizer: 'simple-auth-authorizer:devise'  
+    authorizer: 'simple-auth-authorizer:devise'
   };
 
   if (environment === 'development') {
