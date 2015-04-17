@@ -10,8 +10,6 @@ export function initialize(container, application) {
   loadFacebookSDK();
 
   window.fbAsyncInit = fbAsyncInit;
-	
-	//container.injection('controller', 'FB', FB);
 }
 
 export default {
