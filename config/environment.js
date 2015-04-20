@@ -27,6 +27,18 @@ module.exports = function(environment) {
       'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com 
       'media-src': "'self'",
       'frame-src': "'self' static.ak.facebook.com s-static.ak.facebook.com www.facebook.com accounts.google.com content.googleapis.com"
+    },
+
+    torii: {
+      providers: {
+        'google-oauth2': {
+          apiKey: '903568329885-99mi1ojol2jcne9ns65l6acm0cdne6r2.apps.googleusercontent.com',
+          redirectUri: 'http://localhost:4200'
+        },
+        'facebook-oauth2': {
+          apiKey:      '404599803055772'
+        }
+      }
     }
   };
 
@@ -58,6 +70,8 @@ module.exports = function(environment) {
     ENV['simple-auth-devise']['serverTokenEndpoint'] = 'https://api.alooga.com.br/users/sign_in';
     ENV['simple-auth-devise']['crossOriginWhitelist'] = ['https://api.alooga.com.br/'];
   }
+  
+  ENV.apiHost = "http://localhost:3000";
 
   return ENV;
 };
