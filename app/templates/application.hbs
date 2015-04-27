@@ -1,18 +1,101 @@
-<div class="jumbotron">
+<!-- Fixed navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
-    <h1>Alooga</h1>
-    <hr>
-    {{#link-to 'index'}}Home{{/link-to}}
-		{{#link-to 'protected'}}Protected{{/link-to}}
-		{{#if session.isAuthenticated}}
-		  <button {{ action 'invalidateSession' }}>Logout</button>
-		{{else}}
-		  {{#link-to 'login'}}Login{{/link-to}}
-		  {{#link-to 'signup'}}Sign-up{{/link-to}}
-		{{/if}}
-  </div>
-</div>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      {{#link-to 'index' classNames="navbar-brand"}}Alooga{{/link-to}}
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+					{{#link-to 'quem'}}Quem Somos{{/link-to}}
+				</li>
+				<li>
+					{{#link-to 'como'}}Como funciona{{/link-to}}
+				</li>
+				<li>
+					{{#link-to 'anunciar'}}Quero anunciar{{/link-to}}
+				</li>
+				<li>
+					<a href="http://suporte.alooga.com.br" title="Tire suas dúvidas">FAQ</a>
+				</li>
+      </ul>
 
-<div class="container">
-  {{outlet}}
-</div>
+      <div class="pull-right">
+				{{#if session.isAuthenticated}}
+				  <button {{ action 'invalidateSession' }}>Logout</button>
+				{{else}}
+				  {{#link-to 'login' classNames="btn btn-default signin"}}Login{{/link-to}}
+				  {{#link-to 'signup' classNames="btn btn-default signup"}}Registre-se{{/link-to}}
+				{{/if}}
+			</div>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+
+{{outlet}}
+
+
+<footer>
+	<div class="container">
+		<div class="row">
+			<h3>Siga-nos</h3>
+
+			<ul class="social">
+				<li><a href="http://facebook.com/alooga" title="Facebook" class="facebook" target="_blank">http://facebook.com/alooga</a></li>
+				<li><a href="http://twitter.com/alooga" title="twitter" class="twitter" target="_blank">http://twitter.com/alooga</a></li>
+				<li><a href="http://instagram.com/alooga" title="instagram" class="instagram" target="_blank">http://instagram.com/alooga</a></li>
+				<li><a href="http://youtube.com/alooga" title="youtube" class="youtube" target="_blank">http://youtube.com/alooga</a></li>
+				<li><a href="http://pinterest.com/alooga" title="pinterest" class="pinterest" target="_blank">http://pinterest.com/alooga</a></li>
+			</ul>
+		</div>
+
+		<!-- Begin MailChimp Signup Form -->
+		<div id="newsletter">
+			<form action="//alooga.us10.list-manage.com/subscribe/post?u=58a030dfd11b62a5b9454d340&amp;id=8e6e378de0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+	  		<input type="email" value="" name="EMAIL" class="form-control" id="mce-EMAIL" placeholder="E-mail">
+				<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+		    <div style="position: absolute; left: -5000px;"><input type="text" name="b_58a030dfd11b62a5b9454d340_8e6e378de0" tabindex="-1" value=""></div>
+		    <button type='submit' class="btn btn-default">ASSINAR</button>
+			</form>
+		</div>
+		<!--End mc_embed_signup-->
+
+		
+		<ul class="menu">
+      <li>
+				{{#link-to 'quem'}}Quem Somos{{/link-to}}
+			</li>
+			<li>
+				{{#link-to 'como'}}Como funciona{{/link-to}}
+			</li>
+			<li>
+				{{#link-to 'anunciar'}}Quero anunciar{{/link-to}}
+			</li>
+			<li>
+				<a href="http://suporte.alooga.com.br" title="Tire suas dúvidas">FAQ</a>
+			</li>
+			<li>
+				{{#link-to 'contato'}}Contato{{/link-to}}
+			</li>
+    </ul>
+		
+		<ul class="termos">
+			<li>
+				{{#link-to 'termos'}}Termos de Uso{{/link-to}}
+			</li>
+			<li>
+				{{#link-to 'politica'}}Política de privacidade{{/link-to}}
+			</li>
+		</ul>
+
+		<hr>
+
+		<p>© Alooga 2015. Todos os direitos reservados</p>
+	</div>
+</footer>	

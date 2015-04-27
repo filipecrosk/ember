@@ -1,15 +1,19 @@
-<form {{action 'register' on='submit'}}>
-  <label for='name'>Nome</label>
-  {{input id='name' placeholder='Enter your name'
-           value=name}}
-	<label for='email'>E-mail</label>
-  {{input id='email' placeholder='Enter your email'
-           value=email}}
-  <label for='password'>Password</label>
-  {{input id='password' placeholder='Enter Password'
-           type='password' value=password}}
-	<label for='password_confirmation'>Password Confirmation</label>
-  {{input id='password_confirmation' placeholder='Repeat your Password'
-           type='password' value=password_confirmation}}
-  <button type='submit'>Signup</button>
-</form>
+<div class="container">
+  <h1>Cadastre-se</h1>
+  
+  <form {{action 'register' on='submit'}}>
+    <label for='name'>Nome</label>
+    {{input id='name' placeholder='Enter your name'
+             value=name}}
+  	<label for='email'>E-mail</label>
+    {{input id='email' placeholder='Enter your email'
+             value=email}}
+    <label for='password'>Password</label>
+    {{input id='password' placeholder='Enter Password'
+             type='password' value=password}}
+  	<label for='password_confirmation'>Password Confirmation</label>
+    {{input id='password_confirmation' placeholder='Repeat your Password'
+             type='password' value=password_confirmation}}
+    <button type='submit'>Signup</button>
+  </form>
+</div>

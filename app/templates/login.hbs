@@ -1,13 +1,17 @@
-<form {{action 'authenticate' on='submit'}}>
-  <label for='identification'>Login</label>
-  {{input id='identification' placeholder='Enter Login'
-           value=identification}}
-  <label for='password'>Password</label>
-  {{input id='password' placeholder='Enter Password'
-           type='password' value=password}}
-  <button type='submit'>Login</button>
-</form>
+<div class="container">
+	<h1>Acesse</h1>
+	
+	<form {{action 'authenticate' on='submit'}}>
+	  <label for='identification'>Login</label>
+	  {{input id='identification' placeholder='Enter Login'
+	           value=identification}}
+	  <label for='password'>Password</label>
+	  {{input id='password' placeholder='Enter Password'
+	           type='password' value=password}}
+	  <button type='submit'>Login</button>
+	</form>
 
-<!--<div class="alert alert-info">
-  Or login with <a {{ action 'authenticateWithFacebook' }} class="alert-link" style="cursor: pointer;"><i class="fa fa-facebook-square"></i> Facebook</a> or <a {{ action 'authenticateWithGooglePlus' }} class="alert-link" style="cursor: pointer;"><i class="fa fa-google-plus-square"></i> Google+</a>.
-</div>-->
+	<!--<div class="alert alert-info">
+	  Or login with <a {{ action 'authenticateWithFacebook' }} class="alert-link" style="cursor: pointer;"><i class="fa fa-facebook-square"></i> Facebook</a> or <a {{ action 'authenticateWithGooglePlus' }} class="alert-link" style="cursor: pointer;"><i class="fa fa-google-plus-square"></i> Google+</a>.
+	</div>-->	
+</div>

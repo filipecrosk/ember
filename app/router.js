@@ -9,4 +9,13 @@ export default Router.map(function() {
   this.route('protected');
   this.route('login');
   this.route('signup');
+
+
+  //institucional
+  this.route('quem');
+  this.route('como');
+  this.route('anunciar');
+  this.route('contato');
+  this.route('termos');
+  this.route('politica', { path: '/policita-de-privacidade'} );
 });

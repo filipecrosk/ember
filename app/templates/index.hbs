@@ -1,1 +1,272 @@
-landing page
+<div class="banner_home">
+	<div class="shadow"></div>
+	<div class="container">
+
+		<button class="play" {{ action 'playVideo' }}>Play</button>
+		<h3>Assista ao video</h3>
+
+		<img src="/images/banner_big_logo.png" alt="Alooga">
+		<h1>a primeira rede de consumo colaborativo do brasil</h1>
+		<h2>explore esse universo</h2>	
+	</div>
+
+
+	<div class="search-bar">
+		<div class="container">
+			<form {{action 'authenticate' on='submit'}}>
+				{{input id='search' placeholder='O que você procura?' value=search class="form-control"}}
+	  
+        <div class="select select-block">
+          <select name="categoria" id="categorias" class="categorias-select" data-prefill="">
+            <option value="">Categorias</option>
+						<optgroup label="Para Casa">
+							<option value="2">Ferramentas</option>
+							<option value="2">Eletrodomésticos</option>
+							<option value="2">Decoração</option>
+							<option value="2">Utensílios</option>
+						</optgroup>
+						<optgroup label="Transporte">
+							<option value="2">Carros</option>
+							<option value="2">Motos</option>
+							<option value="2">Caminhões / VUCs</option>
+							<option value="2">Transporte Marítimo</option>
+							<option value="2">Transporte Aéreo</option>
+						</optgroup>
+          </select>
+        </div>
+	      
+	      <span class="input-placeholder-group">
+	      	{{bootstrap-datepicker placeholder="Check in" class="form-control datepicker" value=checkin format="dd/mm/yyyy" language="pt-BR" startDate="today"}}	
+	      </span>
+	      <span class="input-placeholder-group">
+	      	{{bootstrap-datepicker placeholder="Check Out" class="form-control datepicker" value=checkout format="dd/mm/yyyy" language="pt-BR" startDate="today"}}		
+	      </span>
+	      
+	      
+	      <button type='submit' class="btn btn-default">Buscar</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<h2 class="title"><span>destaques no alooga</span></h2>
+
+	<div class="produtos row">
+		<div class="col-md-4 col-sm-12">
+			<div class="item">
+				<div class="photo"> <img src="/images/produto1.jpg"> </div>
+				<div class="description">
+					<div class="title pull-left">
+						<h2>Nome do item</h2>
+						<span>Texto de apoio</span>
+					</div>
+
+					<div class="price pull-right">
+						<span>a partir de</span>
+						<h3><span>R$</span> 15,00</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-4 col-sm-12">
+			<div class="item">
+				<div class="photo"> <img src="/images/produto2.jpg"> </div>
+				<div class="description">
+					<div class="title pull-left">
+						<h2>Nome do item</h2>
+						<span>Texto de apoio</span>
+					</div>
+
+					<div class="price pull-right">
+						<span>a partir de</span>
+						<h3><span>R$</span> 15,00</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-4 col-sm-12">
+			<div class="item">
+				<div class="photo"> <img src="/images/produto3.jpg"> </div>
+				<div class="description">
+					<div class="title pull-left">
+						<h2>Nome do item</h2>
+						<span>Texto de apoio</span>
+					</div>
+
+					<div class="price pull-right">
+						<span>a partir de</span>
+						<h3><span>R$</span> 15,00</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="clearfix"></div>
+</div>
+
+<div class="populares">
+	<div class="container">
+		<h2 class="title"><span>populares no alooga</span></h2>
+
+		<div class="produtos row">
+			<div class="col-md-3 col-sm-12">
+				<div class="item">
+					<div class="photo"> <img src="/images/produto1.jpg"> </div>
+					<div class="description">
+						<div class="title pull-left">
+							<h2>Nome do item</h2>
+							<span>Texto de apoio</span>
+						</div>
+
+						<div class="price pull-right">
+							<span>a partir de</span>
+							<h3><span>R$</span> 15,00</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-12">
+				<div class="item">
+					<div class="photo"> <img src="/images/produto2.jpg"> </div>
+					<div class="description">
+						<div class="title pull-left">
+							<h2>Nome do item</h2>
+							<span>Texto de apoio</span>
+						</div>
+
+						<div class="price pull-right">
+							<span>a partir de</span>
+							<h3><span>R$</span> 15,00</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-12">
+				<div class="item">
+					<div class="photo"> <img src="/images/produto3.jpg"> </div>
+					<div class="description">
+						<div class="title pull-left">
+							<h2>Nome do item</h2>
+							<span>Texto de apoio</span>
+						</div>
+
+						<div class="price pull-right">
+							<span>a partir de</span>
+							<h3><span>R$</span> 15,00</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-12">
+				<div class="item">
+					<div class="photo"> <img src="/images/produto4.jpg"> </div>
+					<div class="description">
+						<div class="title pull-left">
+							<h2>Nome do item</h2>
+							<span>Texto de apoio</span>
+						</div>
+
+						<div class="price pull-right">
+							<span>a partir de</span>
+							<h3><span>R$</span> 15,00</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-12">
+				<div class="item">
+					<div class="photo"> <img src="/images/produto1.jpg"> </div>
+					<div class="description">
+						<div class="title pull-left">
+							<h2>Nome do item</h2>
+							<span>Texto de apoio</span>
+						</div>
+
+						<div class="price pull-right">
+							<span>a partir de</span>
+							<h3><span>R$</span> 15,00</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-12">
+				<div class="item">
+					<div class="photo"> <img src="/images/produto2.jpg"> </div>
+					<div class="description">
+						<div class="title pull-left">
+							<h2>Nome do item</h2>
+							<span>Texto de apoio</span>
+						</div>
+
+						<div class="price pull-right">
+							<span>a partir de</span>
+							<h3><span>R$</span> 15,00</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-12">
+				<div class="item">
+					<div class="photo"> <img src="/images/produto3.jpg"> </div>
+					<div class="description">
+						<div class="title pull-left">
+							<h2>Nome do item</h2>
+							<span>Texto de apoio</span>
+						</div>
+
+						<div class="price pull-right">
+							<span>a partir de</span>
+							<h3><span>R$</span> 15,00</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-12">
+				<div class="item">
+					<div class="photo"> <img src="/images/produto4.jpg"> </div>
+					<div class="description">
+						<div class="title pull-left">
+							<h2>Nome do item</h2>
+							<span>Texto de apoio</span>
+						</div>
+
+						<div class="price pull-right">
+							<span>a partir de</span>
+							<h3><span>R$</span> 15,00</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="clearfix"></div>
+	</div>
+</div>
+
+<div id="modal-video" class="fullscreen-video-player hidden">
+  <div class="row row-table row-full-height">
+    <div class="col-sm-12 col-middle text-center">
+      <video preload="none">
+				<source src="https://s3.amazonaws.com/s3.alooga.com.br/ALOOGA-HD.mp4" type="video/mp4">
+				<source src="https://a0.muscache.com/airbnb/static/belo-3.webm" type="video/webm">
+			</video>
+
+      <i id="play-button-belo" class="media-button icon icon-video-play hide"></i>
+      <a id="close-fullscreen-belo" {{ action 'closeVideo' }}>
+        <i class="glyphicon glyphicon-remove"></i>
+      </a>
+    </div>
+  </div>
+</div>

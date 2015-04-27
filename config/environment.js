@@ -20,13 +20,13 @@ module.exports = function(environment) {
 
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self' connect.facebook.net apis.google.com",
+      'script-src': "'self'",
       'font-src': "'self' http://fonts.gstatic.com", // Allow fonts to be loaded from http://fonts.gstatic.com
-      'connect-src': "'self' http://localhost:3000", // Allow data (ajax/websocket) from api.mixpanel.com and custom-api.local
-      'img-src': "*",
+      'connect-src': "'self' http://localhost:3000 api.alooga.com.br", // Allow data (ajax/websocket) from api.mixpanel.com and custom-api.local
+      'img-src': "* s3.amazonaws.com",
       'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com 
-      'media-src': "'self'",
-      'frame-src': "'self' static.ak.facebook.com s-static.ak.facebook.com www.facebook.com accounts.google.com content.googleapis.com"
+      'media-src': "'self' s3.amazonaws.com",
+      'frame-src': "'self' s3.amazonaws.com"
     },
 
     torii: {
