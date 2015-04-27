@@ -66,10 +66,10 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
-  if (environment === 'production') {
+  /*if (environment === 'production') {
     ENV['simple-auth-devise']['serverTokenEndpoint'] = 'https://api.alooga.com.br/users/sign_in';
     ENV['simple-auth-devise']['crossOriginWhitelist'] = ['https://api.alooga.com.br/'];
-  }
+  }*/
   
   ENV.apiHost = "http://localhost:3000";
 
