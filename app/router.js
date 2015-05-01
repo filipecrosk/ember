@@ -12,10 +12,11 @@ export default Router.map(function() {
 
 
   //institucional
-  this.route('quem');
+  this.route('sobre');
   this.route('como');
   this.route('anunciar');
   this.route('contato');
   this.route('termos');
   this.route('politica', { path: '/policita-de-privacidade'} );
 });
+

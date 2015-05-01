@@ -255,17 +255,15 @@
 </div>
 
 <div id="modal-video" class="fullscreen-video-player hidden">
-  <div class="row row-table row-full-height">
-    <div class="col-sm-12 col-middle text-center">
-      <video preload="none">
-				<source src="https://s3.amazonaws.com/s3.alooga.com.br/ALOOGA-HD.mp4" type="video/mp4">
-				<source src="https://a0.muscache.com/airbnb/static/belo-3.webm" type="video/webm">
-			</video>
+  <div class="col-sm-12 video">
+    <video preload="none">
+			<source src="https://s3.amazonaws.com/s3.alooga.com.br/ALOOGA-HD.mp4" type="video/mp4">
+			<source src="https://a0.muscache.com/airbnb/static/belo-3.webm" type="video/webm">
+		</video>
 
-      <i id="play-button-belo" class="media-button icon icon-video-play hide"></i>
-      <a id="close-fullscreen-belo" {{ action 'closeVideo' }}>
-        <i class="glyphicon glyphicon-remove"></i>
-      </a>
-    </div>
+    <i id="play-button-belo" class="media-button icon icon-video-play hide"></i>
+    <a id="close-fullscreen-belo" {{ action 'closeVideo' }}>
+      <i class="glyphicon glyphicon-remove"></i>
+    </a>
   </div>
 </div>

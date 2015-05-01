@@ -13,7 +13,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-					{{#link-to 'quem'}}Quem Somos{{/link-to}}
+					{{#link-to 'sobre'}}Quem Somos{{/link-to}}
 				</li>
 				<li>
 					{{#link-to 'como'}}Como funciona{{/link-to}}
@@ -28,9 +28,9 @@
 
       <div class="pull-right">
 				{{#if session.isAuthenticated}}
-				  <button {{ action 'invalidateSession' }}>Logout</button>
+				  <button {{ action 'invalidateSession' }} class="btn btn-default signup">Sair</button>
 				{{else}}
-				  {{#link-to 'login' classNames="btn btn-default signin"}}Login{{/link-to}}
+					{{#link-to 'login' classNames="btn btn-default signin"}}Login{{/link-to}}
 				  {{#link-to 'signup' classNames="btn btn-default signup"}}Registre-se{{/link-to}}
 				{{/if}}
 			</div>
@@ -69,7 +69,7 @@
 		
 		<ul class="menu">
       <li>
-				{{#link-to 'quem'}}Quem Somos{{/link-to}}
+				{{#link-to 'sobre'}}Quem Somos{{/link-to}}
 			</li>
 			<li>
 				{{#link-to 'como'}}Como funciona{{/link-to}}
@@ -99,3 +99,6 @@
 		<p>© Alooga 2015. Todos os direitos reservados</p>
 	</div>
 </footer>	
+
+
+{{outlet 'modal'}}

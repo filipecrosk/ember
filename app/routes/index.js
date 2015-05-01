@@ -1,7 +1,9 @@
 import Ember from 'ember';
+import ResetScroll from '../mixins/reset-scroll';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(ResetScroll, {
 	activate: function() {
+    this._super.apply(this, arguments);
     Ember.$('body').addClass('index');
   },
   deactivate: function() {
@@ -15,5 +17,8 @@ export default Ember.Route.extend({
   	closeVideo: function(){
   		Ember.$('#modal-video').addClass('hidden').find('video').get(0).pause();
   	}
+  },
+  model: function() {
+    //return this.store.find('product');
   }
 });
