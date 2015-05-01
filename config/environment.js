@@ -52,6 +52,12 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     ENV.APP.LOG_VIEW_LOOKUPS = true;
+
+    ENV.APP.apiHost = "http://localhost:3000";
+
+    ENV['simple-auth-devise'] = {                                                                                                                                                                                                                                                   
+      serverTokenEndpoint : ENV.APP.apiHost + '/users/sign_in'                                                                                                                                                                                                                     
+    }; 
   }
 
   if (environment === 'test') {
@@ -64,14 +70,14 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+
+    ENV.APP.apiHost = "http://localhost:3000";
   }
 
-  /*if (environment === 'production') {
-    ENV['simple-auth-devise']['serverTokenEndpoint'] = 'https://api.alooga.com.br/users/sign_in';
-    ENV['simple-auth-devise']['crossOriginWhitelist'] = ['https://api.alooga.com.br/'];
-  }*/
+  if (environment === 'production') {    
+    ENV.APP.apiHost = "http://api.alooga.com.br";
+  }
   
-  ENV.apiHost = "http://localhost:3000";
 
   return ENV;
 };
