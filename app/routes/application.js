@@ -3,11 +3,12 @@ import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
  
 export default Ember.Route.extend(ApplicationRouteMixin, {
 	actions: {
-    showModal: function(name, model) {
+    showModal: function(name, model, showFooter) {
       this.render(name, {
         into: 'application',
         outlet: 'modal',
-        model: model
+        model: model,
+        showFooter: 'showFooter'
       });
     },
     removeModal: function() {
@@ -16,6 +17,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
         parentView: 'application'
       });
       Ember.$('.modal').modal('hide');
+      Ember.$('.modal-backdrop').remove();
     }
   }
 });

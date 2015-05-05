@@ -1,8 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  closeText: 'Close',
-  okText: 'Ok',
+  closeText: 'Fechar',
+  okText: 'Enviar',
+  showFooter: false,
   actions: {
     ok: function() {
       this.$('.modal').modal('hide');
@@ -10,6 +11,7 @@ export default Ember.Component.extend({
     }
   },
   show: function() {
+    this.set("showFooter", false);
     this.$('.modal').modal().on('hidden.bs.modal', function() {
       this.sendAction('close');
     }.bind(this));

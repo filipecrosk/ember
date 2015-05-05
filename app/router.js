@@ -9,7 +9,7 @@ export default Router.map(function() {
   this.route('protected');
   this.route('login');
   this.route('signup');
-
+  this.route('recoveryPassword', { path: 'alterar-senha'});
 
   //institucional
   this.route('sobre');

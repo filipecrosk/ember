@@ -1,19 +1,40 @@
-<div class="container">
-  <h1>Cadastre-se</h1>
-  
+{{#my-modal title='Cadastre-se' ok='register' close='removeModal'}}
   <form {{action 'register' on='submit'}}>
-    <label for='name'>Nome</label>
-    {{input id='name' placeholder='Enter your name'
-             value=name}}
-  	<label for='email'>E-mail</label>
-    {{input id='email' placeholder='Enter your email'
-             value=email}}
-    <label for='password'>Password</label>
-    {{input id='password' placeholder='Enter Password'
-             type='password' value=password}}
-  	<label for='password_confirmation'>Password Confirmation</label>
-    {{input id='password_confirmation' placeholder='Repeat your Password'
-             type='password' value=password_confirmation}}
-    <button type='submit'>Signup</button>
+    {{#if loginFailed}}
+      <div class="alert alert-danger">E-mail ou senha incorretos.</div>
+    {{/if}}
+    <div class="form-group">
+      <label for='name'>Nome</label>
+      {{validated-input type="text" value=name errors=errors.name fieldid="name" placeholder='Apenas seu primeiro nome'}}
+    </div>
+
+    <div class="form-group">
+      <label for='lastname'>Sobrenome</label>
+      {{validated-input type="text" value=lastname errors=errors.lastname fieldid="lastname"}}
+    </div>
+
+    <div class="form-group">
+      <label for='email'>E-mail</label>
+      {{validated-input type="email" value=email errors=errors.email fieldid="email" placeholder='Informe seu e-mail'}}
+    </div>
+
+    <div class="form-group">
+      <label for='password'>Senha</label>
+      {{validated-input type="password" value=password errors=errors.password fieldid="password" placeholder='Hora de criar uma senha super segura, vamos lá?'}}
+    </div>
+    
+    <div class="form-group">
+      <label for='passwordConfirmation'>Confirme sua senha</label>
+      {{validated-input type="password" value=passwordConfirmation errors=errors.passwordConfirmation fieldid="passwordConfirmation"}}
+    </div>
+
+    <p>
+      Ao se cadastrar, você concordar com nossos {{#link-to 'termos' target="_blank"}}termos de Uso{{/link-to}} e {{#link-to 'politica' target="_blank"}}política de privacidade{{/link-to}}.
+    </p>
+
+    <button type="submit" class="btn btn-default signin" {{bind-attr disabled="isProcessing"}}>Cadastrar</button>
   </form>
-</div>
+
+  <hr>
+  Já tem cadastro? <a href="#" {{action 'showModal' 'login' 'false'}}>Entre aqui</a>
+{{/my-modal}}

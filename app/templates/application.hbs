@@ -28,10 +28,26 @@
 
       <div class="pull-right">
 				{{#if session.isAuthenticated}}
-				  <button {{ action 'invalidateSession' }} class="btn btn-default signup">Sair</button>
+					<ul class="nav navbar-nav">
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+		          	<img src="/images/original.jpg" class="img-circle"> Filipe
+		          <span class="caret"></span></a>
+		          <ul class="dropdown-menu" role="menu">
+		            <li><a href="#">Painel</a></li>
+		            <li><a href="#">Seus anúncios</a></li>
+		            <li><a href="#">Suas reservas</a></li>
+		            <li><a href="#">Seus favoritos</a></li>
+		            <li><a href="#">Conta</a></li>
+		            <li class="divider"></li>
+		            <li><a href="#" {{ action 'invalidateSession' }}>Sair</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+				  <button {{ action 'invalidateSession' }} class="btn btn-default signin">Favoritos</button>
 				{{else}}
-					{{#link-to 'login' classNames="btn btn-default signin"}}Login{{/link-to}}
-				  {{#link-to 'signup' classNames="btn btn-default signup"}}Registre-se{{/link-to}}
+					<button {{action 'showModal' 'login' 'false'}} class="btn btn-default signin">Login</button>
+					{{#link-to 'signup' classNames="btn btn-default signup"}}Registre-se{{/link-to}}
 				{{/if}}
 			</div>
     </div><!--/.nav-collapse -->

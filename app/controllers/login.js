@@ -1,6 +1,20 @@
 import Ember from 'ember';
+import EmberValidations from 'ember-validations';
 
-export default Ember.Controller.extend({
+export default Ember.Controller.extend(EmberValidations.Mixin, {
+  loginFailed: false,
+  isProcessing: false,
+
+  validations: {
+    identification: {
+      presence: {message: "Favor informar seu e-mail"},
+      format: { with: /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/, allowBlank: false, message: 'parece que você digitou um e-mail errado'  }
+    },
+    password: {
+      presence: {message: "Favor informar senha"}
+    }
+  },
+
 	actions: {
 		authenticateWithFacebook: function() {
       var _this = this;
@@ -40,9 +54,26 @@ export default Ember.Controller.extend({
       });*/
     },
     authenticate: function() {
-      var _this = this;
-      var credentials = this.getProperties('identification', 'password');
-      this.get('session').authenticate('simple-auth-authenticator:devise', credentials);
+      if ( this.get('isValid') ){
+        this.setProperties({
+          loginFailed: false,
+          isProcessing: true
+        });
+
+        var credentials = this.getProperties('identification', 'password');
+        this.get('session').authenticate('simple-auth-authenticator:devise', credentials).then(function(data){
+          Ember.$('.modal').modal('hide');
+          Ember.$('.modal-backdrop').remove();
+          this.set("isProcessing", false);
+        }, function() {
+          this.set("isProcessing", false);
+          this.set("loginFailed", true);
+        }.bind(this));
+      } 
+
     }
-  }
+  },
+
+  
+
 });

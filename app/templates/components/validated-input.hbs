@@ -1,0 +1,12 @@
+{{input id=fieldid
+				type=type
+				class='form-control' 
+				placeholder=placeholder
+				value=value
+				action="showErrors" 
+				on="key-press"}}
+{{#if showError}}
+	<div class="has-error">
+		<span class="help-block">{{errors}}</span>
+	</div>
+{{/if}}

@@ -1,5 +1,5 @@
 <div class="modal fade">
-  <div class="modal-dialog">
+  <div class="modal-dialog {{size}}">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -8,10 +8,12 @@
       <div class="modal-body">
         {{yield}}
       </div>
+      {{#if showFooter}}
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">{{closeText}}</button>
         <button type="button" class="btn btn-primary" {{action 'ok'}}>{{okText}}</button>
       </div>
+      {{/if}}
     </div>
   </div>
 </div>
