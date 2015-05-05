@@ -7,9 +7,10 @@
 
 body { padding-top: 66px; font-family: 'Roboto', sans-serif; font-size: 14px; line-height: 1.43; color: #565a5c; font-weight: 300; }
 
+body.index .navbar { background: transparent; border: none; }
 .navbar,
-body.index .navbar.white { background: #fff; height: 66px;border: none; box-shadow: 0 4px 2px -2px rgba(182, 182, 182, 0.75); -webkit-box-shadow: 0 4px 2px -2px rgba(182, 182, 182, 0.75); -webkit-transition: background 0.2s; transition: background 0.2s;}
-body.index .navbar { background: transparent; border: none;box-shadow: none;-webkit-box-shadow: none; }
+body.index .navbar.white { background: #fff; height: 66px;-webkit-transition: background 0.2s; transition: background 0.2s;border-bottom: 1px solid #f5f5f5;}
+
 
 .navbar .navbar-brand,
 body.index .navbar.white .navbar-brand { display: block; width: 159px;height: 41px;background: url('/images/logo2.png');overflow: hidden;text-indent: -9999px; margin-top: 17px; }
@@ -17,31 +18,31 @@ body.index .navbar .navbar-brand {background: url('/images/logo.png');}
 .navbar ul { list-style: none; margin-left: 200px; }
 .navbar ul li { display: inline-block;margin-left: 15px; }
 .navbar ul li:first-child { margin-left: 0; }
-.navbar ul li a,
+.navbar-inverse .navbar-nav > li > a,
 body.index .navbar.white ul li a { font-family: 'Roboto', sans-serif; font-style: 16px; text-transform: uppercase; line-height: 16px; color: #9aa4a5; font-weight: 700;padding: 27px 5px 19px; }
-.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus, .navbar ul li a.active { color: #77bea1; border-bottom: 4px solid #77bea1; }
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus, .navbar ul li a.active { color: $brand-primary; border-bottom: 4px solid $brand-primary; }
 body.index .navbar ul li a { color: #fff; }
 
-.navbar .pull-right ul { margin-left: 0;margin-right: 10px;font-weight: 300; }
-.navbar .navbar-nav li.dropdown a { font-size: 14px;text-transform: none;padding: 11px 5px 14px;}
-.navbar .navbar-nav li.dropdown a:hover, .navbar .navbar-nav li.dropdown a:focus { border: none;}
+.navbar .pull-right ul {margin: 0 10px 0 0;font-weight: 300;padding: 0;}
+.navbar .pull-right .navbar-nav li.dropdown a { font-size: 14px;text-transform: none;padding: 15px 5px 10px;font-weight: 300;color: #9aa4a5;}
+.navbar .navbar-nav li.dropdown a:hover, .navbar .navbar-nav li.dropdown a:focus { border: none; background: none; }
 .navbar .navbar-nav li.dropdown img { max-height: 40px; }
-.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus { background: #f5f5f5; color: #77bea1; }
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus { background: #f5f5f5; color: $brand-primary; }
 .navbar .dropdown-menu li { display: block;margin: 0px;padding:0;}
-.navbar .navbar-nav .dropdown-menu li a { padding: 5px; font-size: 14px;text-transform: none;color: #666;font-weight: 300;}
-.navbar .navbar-nav .dropdown-menu li a:hover { background: #f5f5f5; }
+.navbar .pull-right .navbar-nav .dropdown-menu li a { padding: 5px; font-size: 14px;text-transform: none;color: #666;font-weight: 300;padding: 3px 6px;}
+.navbar .pull-right .navbar-nav .dropdown-menu li a:hover { background: #f5f5f5; }
 
-.btn.signin { background-color: #77bea1; border: 2px solid #77bea1; font-family: 'Roboto', sans-serif; font-style: 12px; text-transform: uppercase; color: #fff; height: 33px; font-weight: 400;margin-top: 17px; }
-.btn.signin:hover, .btn.signin.active { background-color: #5f9a82;border-color: #5f9a82; -webkit-box-shadow:none; box-shadow:none; }
+.btn.signin { background-color: $brand-primary; border: 2px solid $brand-primary; font-family: 'Roboto', sans-serif; font-style: 12px; text-transform: uppercase; color: #fff;font-weight: 400;margin-top: 17px;padding: 3px 6px; }
+.btn.signin:hover, .btn.signin.active { background-color: #5f9a82;border-color: #5f9a82; }
 .btn.signup,
 body.index .navbar.white .btn.signup  { background: transparent; border: 2px solid #9aa4a5; font-family: 'Roboto', sans-serif; font-style: 12px; text-transform: uppercase; color: #666; height: 33px; font-weight: 400;margin-top: 17px; }
 .btn.signup:hover, .btn.signup.active,
-body.index .navbar.white .btn.signup:hover  { background-color: #fff; border-color: #333; color: #333; -webkit-box-shadow:none; box-shadow:none; }
+body.index .navbar.white .btn.signup:hover  { background-color: #fff; border-color: #333; color: #333; }
 body.index .btn.signup { background: transparent; border: 2px solid #fff; color: #fff; }
 body.index .btn.signup:hover { background-color: #fff; color: #333; }
 
 /*** footer ***/
-footer { text-align: center; width: 100%; height: 390px; padding: 47px 0 30px; background: url('/images/footer.jpg') top center; overflow: hidden;margin-top: 60px;}
+footer { text-align: center; width: 100%; padding: 47px 0 10px; background: url('/images/footer.jpg') top center; overflow: hidden;margin-top: 60px;}
 body.index footer { margin-top: 0; }
 footer h3 { font-family: 'Roboto';font-size: 18px;line-height: 25px;font-weight: 700; color: #33495e;margin:0 0 10px; }
 
@@ -56,7 +57,7 @@ footer .social li a.youtube { background-position: -190px 0;}
 footer .social li a.pinterest { background-position: -253px 0;}
 
 footer #newsletter { font-size: 0; text-align: center;margin-bottom: 40px; }
-footer #newsletter input { width: 301px; height: 40px; display: inline-block; -webkit-border-radius: 3px 0 0 3px;border-radius: 3px 0 0 3px;background: #fff;}
+footer #newsletter input { width: 301px; height: 40px; display: inline-block; -webkit-border-radius: 3px 0 0 3px;border-radius: 3px 0 0 3px;background: #fff;padding-left: 10px;}
 footer #newsletter button[type="submit"] { width: 108px;height: 40px; -webkit-border-radius: 0px 3px 3px 0px;border-radius: 0px 3px 3px 0px;background: #33495e;border: none;font-weight: 400;color: #fff;vertical-align: top;text-transform: uppercase;display: inline-block; }
 
 footer .menu { list-style: none; }
@@ -66,7 +67,7 @@ footer .menu li a { font-family: 'Roboto', sans-serif; font-style: 16px; text-tr
 
 footer .termos { list-style: none; }
 footer .termos li { display: inline-block;margin-right: 15px; }
-footer .termos li a { font-family: 'Roboto', sans-serif; font-style: 12px; line-height: 25px; color: #33495e; }
+footer .termos li a { font-family: 'Roboto', sans-serif; font-style: 12px; line-height: 25px; color: #33495e; font-weight: 400; }
 
 footer hr { border-color: #33495e; width: 840px; }
 footer p { font-style: 12px; line-height: 25px; color: #fff; }
@@ -89,8 +90,8 @@ footer p { font-style: 12px; line-height: 25px; color: #fff; }
 .banner_home .search-bar input { background: #fff; }
 .banner_home .search-bar .select-block { width: 129px; display: inline-block;vertical-align: top; }
 .banner_home .search-bar .datepicker { border-radius: 0;width: 129px;height: 44px;}
-.banner_home .search-bar button[type="submit"] { width: 108px;height: 44px; -webkit-border-radius: 0px 3px 3px 0px;border-radius: 0px 3px 3px 0px;background: #77bea1;border: none;font-weight: 400;color: #fff;vertical-align: top;text-transform: uppercase; }
-.banner_home .search-bar button[type="submit"]:hover { background-color: #5f9a82;border-color: #5f9a82; -webkit-box-shadow:none; box-shadow:none; }
+.banner_home .search-bar button[type="submit"] { width: 108px;height: 44px; -webkit-border-radius: 0px 3px 3px 0px;border-radius: 0px 3px 3px 0px;background: $brand-primary;border: none;font-weight: 400;color: #fff;vertical-align: top;text-transform: uppercase; }
+.banner_home .search-bar button[type="submit"]:hover { background-color: #5f9a82;border-color: #5f9a82; }
 
 .select-block { display: block; width: 100%; background: #fff; font-size: 14px; }
 .search-bar .select select { padding: 8px 10px; padding-right: 1em; width: 100%;-webkit-appearance:none; -moz-appearance:none; appearance:none;} 
@@ -98,7 +99,7 @@ footer p { font-style: 12px; line-height: 25px; color: #fff; }
 .banner_home .search-bar .input-placeholder-group {position: relative; display: inline-block; }
 .banner_home .search-bar input { padding-left: 5px; }
 
-h2.title {margin: 78px auto; font-family: 'Roboto';font-size: 37px;line-height: 25px;color: #77bea1;font-weight: 300;line-height: 0.5;text-align: center;text-transform: uppercase; }
+h2.title {margin: 78px auto; font-family: 'Roboto';font-size: 37px;line-height: 25px;color: $brand-primary;font-weight: 300;line-height: 0.5;text-align: center;text-transform: uppercase; }
 h2.title span {display: inline-block; position: relative; } 
 h2.title span:before, h2.title span:after {content: ""; position: absolute; height: 5px; border-top: 1px solid #a0a0a0; top: 10px; width: 180px; }
 h2.title span:before {right: 100%; margin-right: 15px;}
