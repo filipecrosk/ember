@@ -18,5 +18,11 @@ export default Router.map(function() {
   this.route('contato');
   this.route('termos');
   this.route('politica', { path: '/policita-de-privacidade'} );
+
+  
+
+
+  //set up all of your known routes, and then...
+  this.route("fourOhFour", { path: "*path"});
 });
 

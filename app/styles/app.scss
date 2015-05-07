@@ -19,7 +19,7 @@ body.index .navbar .navbar-brand {background: url('/images/logo.png');}
 .navbar ul li { display: inline-block;margin-left: 15px; }
 .navbar ul li:first-child { margin-left: 0; }
 .navbar-inverse .navbar-nav > li > a,
-body.index .navbar.white ul li a { font-family: 'Roboto', sans-serif; font-style: 16px; text-transform: uppercase; line-height: 16px; color: #9aa4a5; font-weight: 700;padding: 27px 5px 19px; }
+body.index .navbar.white ul li a { font-family: 'Roboto', sans-serif; font-size: 16px; text-transform: uppercase; line-height: 16px; color: #9aa4a5; font-weight: 700;padding: 27px 5px 19px; }
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus, .navbar ul li a.active { color: $brand-primary; border-bottom: 4px solid $brand-primary; }
 body.index .navbar ul li a { color: #fff; }
 
@@ -29,13 +29,13 @@ body.index .navbar ul li a { color: #fff; }
 .navbar .navbar-nav li.dropdown img { max-height: 40px; }
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus { background: #f5f5f5; color: $brand-primary; }
 .navbar .dropdown-menu li { display: block;margin: 0px;padding:0;}
-.navbar .pull-right .navbar-nav .dropdown-menu li a { padding: 5px; font-size: 14px;text-transform: none;color: #666;font-weight: 300;padding: 3px 6px;line-height: 16px;}
+.navbar .pull-right .navbar-nav .dropdown-menu li a { font-size: 14px;text-transform: none;color: #666;font-weight: 300;padding: 6px;line-height: 16px;}
 .navbar .pull-right .navbar-nav .dropdown-menu li a:hover { background: #f5f5f5; }
 
-.btn.btn-green { background-color: $brand-primary; border: 2px solid $brand-primary; font-family: 'Roboto', sans-serif; font-style: 12px; text-transform: uppercase; color: #fff;font-weight: 400;margin-top: 17px;padding: 3px 6px; }
+.btn.btn-green { background-color: $brand-primary; border: 2px solid $brand-primary; font-family: 'Roboto', sans-serif; font-size: 12px; text-transform: uppercase; color: #fff;font-weight: 400;margin-top: 17px;padding: 3px 6px; }
 .btn.btn-green:hover, .btn.btn-green.active { background-color: darken($brand-primary, 10%);border-color: darken($brand-primary, 10%); }
 .btn.signup,
-body.index .navbar.white .btn.signup  { background: transparent; border: 2px solid #9aa4a5; font-family: 'Roboto', sans-serif; font-style: 12px; text-transform: uppercase; color: #666; height: 33px; font-weight: 400;margin-top: 17px; }
+body.index .navbar.white .btn.signup  { background: transparent; border: 2px solid #9aa4a5; font-family: 'Roboto', sans-serif; font-size: 12px; text-transform: uppercase; color: #666; height: 33px; font-weight: 400;margin-top: 17px; }
 .btn.signup:hover, .btn.signup.active,
 body.index .navbar.white .btn.signup:hover  { background-color: #fff; border-color: #333; color: #333; }
 body.index .btn.signup { background: transparent; border: 2px solid #fff; color: #fff; }
@@ -63,14 +63,14 @@ footer #newsletter button[type="submit"] { width: 108px;height: 40px; -webkit-bo
 footer .menu { list-style: none; }
 footer .menu li { display: inline-block; margin-left: 15px; }
 footer .menu li:first-child { margin-left: 0; }
-footer .menu li a { font-family: 'Roboto', sans-serif; font-style: 16px; text-transform: uppercase; line-height: 16px; color: #FFF; font-weight: 500; }
+footer .menu li a { font-family: 'Roboto', sans-serif; font-size: 16px; text-transform: uppercase; line-height: 16px; color: #FFF; font-weight: 500; }
 
 footer .termos { list-style: none; }
 footer .termos li { display: inline-block;margin-right: 15px; }
-footer .termos li a { font-family: 'Roboto', sans-serif; font-style: 12px; line-height: 25px; color: #33495e; font-weight: 400; }
+footer .termos li a { font-family: 'Roboto', sans-serif; font-size: 12px; line-height: 25px; color: #33495e; font-weight: 400; }
 
 footer hr { border-color: #33495e; width: 840px; }
-footer p { font-style: 12px; line-height: 25px; color: #fff; }
+footer p { font-size: 12px; line-height: 25px; color: #fff; }
 
 /*** home **/
 .banner_home { width: 100%; height: 900px; background: url('/images/home_banner.jpg') top center no-repeat; background-size: cover; position: relative; text-align: center; padding-top: 357px; margin-top: -66px;overflow: hidden; }
@@ -172,12 +172,12 @@ footer p { font-style: 12px; line-height: 25px; color: #fff; }
 }
 
 /********** COMMOM **********/
-h1 { font-size: 40px; line-height: 45px; font-weight: 300; }
-h2,h3 { font-size: 30px; font-weight: 300; }
 p { line-height: 25px; }
 ol li, ul li { line-height: 25px; }
 
 .text-white { color: #fff; }
+.text-jumbo { font-size: 60px; font-weight: 700;}
+.text-ginormous { font-size: 145px; }
 
 .page-header {margin: 0px; padding: 0px; padding: 120px 0px; border-bottom: none; position: relative; overflow: hidden; margin-bottom: 40px; }
 .page-header-mini {padding: 60px 0px;}
