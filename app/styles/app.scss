@@ -155,15 +155,16 @@ footer p { font-style: 12px; line-height: 25px; color: #fff; }
 
 .home-tarja {
 	background: #46BDA1;
-	margin-bottom: 60px;
 	text-align: center;
 	font-size: 16px; 
+	margin-top: 60px;
 
+	img { width: 50%; }
 	h2 {
 		font-size: 30px;
 	}
 	.col-md-4 {
-		padding: 20px;
+		padding: 40px 20px 20px;
 	}
 	.center {
 		background: #D1DBDA;
