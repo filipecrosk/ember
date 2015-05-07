@@ -3,7 +3,7 @@ import ENV from '../config/environment';
 import EmberValidations from 'ember-validations';
 
 export default Ember.Controller.extend(EmberValidations.Mixin, {
-  loginFailed: false,
+  signupFailed: false,
   isProcessing: false,
 
   validations: {
@@ -26,12 +26,12 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
 
 	actions: {
     register: function() {
-      var data, _this;
+      var _this;
       _this = this;
 
       if ( this.get('isValid') ) {
         this.setProperties({
-          loginFailed: false,
+          signupFailed: false,
           isProcessing: true
         });
 
@@ -68,14 +68,16 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
             return _this.send("registrationFailed", xhr, status, error);
           }));
         }));
+      } else {
+        _this.set("signupFailed", true);
       }
     },
     registrationSucceeded: function(response) {
       return console.log("Registration Succeeded: " + (Ember.inspect(response)));
     },
     registrationFailed: function(xhr, status, error) {
-      _this.set("isProcessing", false);
-      _this.set("loginFailed", true);
+      this.set("isProcessing", false);
+      this.set("signupFailed", true);
 
       return console.log("Registration Failed: " + error);
     }

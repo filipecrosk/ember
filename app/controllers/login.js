@@ -54,6 +54,7 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
       });*/
     },
     authenticate: function() {
+      var _this = this;
       if ( this.get('isValid') ){
         this.setProperties({
           loginFailed: false,
@@ -64,7 +65,7 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
         this.get('session').authenticate('simple-auth-authenticator:devise', credentials).then(function(data){
           Ember.$('.modal').modal('hide');
           Ember.$('.modal-backdrop').remove();
-          this.set("isProcessing", false);
+          _this.set("isProcessing", false);
         }, function() {
           this.set("isProcessing", false);
           this.set("loginFailed", true);

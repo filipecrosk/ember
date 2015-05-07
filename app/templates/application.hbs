@@ -44,10 +44,9 @@
 		          </ul>
 		        </li>
 		      </ul>
-				  <button {{ action 'invalidateSession' }} class="btn btn-default signin">Favoritos</button>
+				  <button {{ action 'invalidateSession' }} class="btn btn-default btn-green">Favoritos</button>
 				{{else}}
-					<button {{action 'showModal' 'login' 'false'}} class="btn btn-default signin">Login</button>
-					{{#link-to 'signup' classNames="btn btn-default signup"}}Registre-se{{/link-to}}
+					<button {{action 'showModal' 'login' 'false'}} class="btn btn-default btn-green">Login</button>
 				{{/if}}
 			</div>
     </div><!--/.nav-collapse -->

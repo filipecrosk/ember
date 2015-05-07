@@ -1,7 +1,7 @@
 {{#my-modal title='Cadastre-se' ok='register' close='removeModal'}}
   <form {{action 'register' on='submit'}}>
-    {{#if loginFailed}}
-      <div class="alert alert-danger">E-mail ou senha incorretos.</div>
+    {{#if signupFailed}}
+      <div class="alert alert-danger">Por favor confira todos os campos.</div>
     {{/if}}
     <div class="form-group">
       <label for='name'>Nome</label>
@@ -32,7 +32,7 @@
       Ao se cadastrar, você concordar com nossos {{#link-to 'termos' target="_blank"}}termos de Uso{{/link-to}} e {{#link-to 'politica' target="_blank"}}política de privacidade{{/link-to}}.
     </p>
 
-    <button type="submit" class="btn btn-default signin" {{bind-attr disabled="isProcessing"}}>Cadastrar</button>
+    <button type="submit" class="btn btn-default btn-green" {{bind-attr disabled="isProcessing"}}>Cadastrar</button>
   </form>
 
   <hr>
