@@ -37,7 +37,7 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
 
       	return Ember.$.ajax({
           method: "POST",
-          url: ENV.APP.apiHost + "/users/signup",
+          url: ENV.apiHost + "/users/signup",
           data: {
             user: {
               name: this.get("name"),

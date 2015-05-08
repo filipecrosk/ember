@@ -17,7 +17,7 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
   actions: {
     setNewPassword: function(){
       if ( this.get('isValid') ){
-        Ember.$.ajax({ url: ENV.APP.apiHost + "/users/password", type: 'PUT', data: {
+        Ember.$.ajax({ url: ENV.apiHost + "/users/password", type: 'PUT', data: {
           user: {
             password: this.get("password"),
             password_confirmation: this.get("passwordConfirmation"),

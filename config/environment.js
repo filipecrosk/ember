@@ -20,16 +20,16 @@ module.exports = function(environment) {
 
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self'",
-      'font-src': "'self' https://fonts.gstatic.com", // Allow fonts to be loaded from http://fonts.gstatic.com
+      'script-src': "'self' 'unsafe-eval' https://*.googleapis.com https://*.gstatic.com",
+      'font-src': "'self' https://*.gstatic.com", // Allow fonts to be loaded from http://fonts.gstatic.com
       'connect-src': "'self' http://localhost:3000 api.alooga.com.br", // Allow data (ajax/websocket) from api.mixpanel.com and custom-api.local
-      'img-src': "* s3.amazonaws.com",
-      'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com 
+      'img-src': "'self' * s3.amazonaws.com https://*.googleapis.com https://*.gstatic.com",
+      'style-src': "'self' 'unsafe-inline' https://*.googleapis.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com 
       'media-src': "'self' s3.amazonaws.com",
       'frame-src': "'self' s3.amazonaws.com"
     },
 
-    torii: {
+    /*torii: {
       providers: {
         'google-oauth2': {
           apiKey: '903568329885-99mi1ojol2jcne9ns65l6acm0cdne6r2.apps.googleusercontent.com',
@@ -39,13 +39,9 @@ module.exports = function(environment) {
           apiKey:      '404599803055772'
         }
       }
-    }
+    }*/
   };
-
-  ENV['simple-auth'] = {    
-    authorizer: 'simple-auth-authorizer:devise'
-  };
-
+  
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     ENV.APP.LOG_ACTIVE_GENERATION = true;
@@ -53,11 +49,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     ENV.APP.LOG_VIEW_LOOKUPS = true;
 
-    ENV.APP.apiHost = "http://localhost:3000";
-
-    ENV['simple-auth-devise'] = {                                                                                                                                                                                                                                                   
-      serverTokenEndpoint : ENV.APP.apiHost + '/users/sign_in'                                                                                                                                                                                                                     
-    }; 
+    ENV.apiHost = "http://localhost:3000";
   }
 
   if (environment === 'test') {
@@ -71,13 +63,25 @@ module.exports = function(environment) {
 
     ENV.APP.rootElement = '#ember-testing';
 
-    ENV.APP.apiHost = "http://localhost:3000";
+    ENV.apiHost = "http://localhost:3000";
   }
 
   if (environment === 'production') {    
-    ENV.APP.apiHost = "http://api.alooga.com.br";
-  }
-  
+    ENV.apiHost = "http://api.alooga.com.br";
+  }  
+
+
+  ENV['simple-auth-devise'] = { 
+    tokenAttributeName: 'token',
+    identificationAttributeName: 'email',
+    serverTokenEndpoint: ENV.apiHost + '/users/sign_in',
+    authorizer: 'devise'
+  };
+
+  ENV['simple-auth'] = {
+    authorizer: 'simple-auth-authorizer:devise',
+    crossOriginWhitelist: ['http://localhost:3000']
+  };
 
   return ENV;
 };

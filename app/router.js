@@ -19,8 +19,12 @@ export default Router.map(function() {
   this.route('termos');
   this.route('politica', { path: '/policita-de-privacidade'} );
 
-  
-
+  this.route('products', { path: '/produtos' }, function() {
+    this.route('new', { path: 'adicionar'} );
+    this.resource('edit', { path: 'editar/:product_id'}, function() {
+      this.route('calendario');
+    });
+  });
 
   //set up all of your known routes, and then...
   this.route("fourOhFour", { path: "*path"});

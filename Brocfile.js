@@ -15,5 +15,7 @@ var addFonts = new Funnel('bower_components/bootstrap-sass/assets/fonts/bootstra
   destDir: 'fonts'
 });
 
+app.import('vendor/gmaps.js');
+
 //module.exports = app.toTree();
 module.exports = app.toTree(addFonts);
